@@ -19,6 +19,8 @@ SRCS = $(SRC_DIR)/commands/push.c \
 	$(SRC_DIR)/push_swap/sort_stacks.c \
 	$(SRC_DIR)/push_swap/sort_chunks.c \
 	$(SRC_DIR)/push_swap/sort_radix.c \
+	$(SRC_DIR)/push_swap/sort_helpers.c \
+	$(SRC_DIR)/push_swap/init_helpers.c \
 	$(SRC_DIR)/push_swap/stack_init.c \
 	$(SRC_DIR)/push_swap/stack_utils.c \
 	$(SRC_DIR)/push_swap/stack_utils_2.c \

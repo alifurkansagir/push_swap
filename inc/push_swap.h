@@ -84,5 +84,20 @@ void			sort_three(t_stack_node **a);
 void			sort_stacks(t_stack_node **a, t_stack_node **b);
 void			sort_chunks(t_stack_node **a, t_stack_node **b);
 void			sort_radix(t_stack_node **a, t_stack_node **b);
+/*
+** Shared sort helpers (kept minimal for norm rules)
+*/
+void			quick_sort(int *arr, int left, int right);
+int			*build_sorted_array(t_stack_node *a, int len);
+int			rank_of(int *arr, int len, int value);
+void			map_indices(t_stack_node *a);
+int			get_max_bits(int len);
+
+/*
+** Init helpers
+*/
+void			calculate_cost(t_stack_node *a, int len_a, int len_b);
+void			cost_analysis_a(t_stack_node *a, t_stack_node *b);
+void			set_target_a(t_stack_node *a, t_stack_node *b);
 
 #endif

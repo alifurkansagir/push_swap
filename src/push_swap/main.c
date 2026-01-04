@@ -24,10 +24,15 @@ int	main(int argc, char **argv)
 	stack_init(&a, argv, argc);
 	if (!stack_sorted(a))
 	{
-		if (stack_len(a) == 2)
+		int len = stack_len(a);
+		if (len == 2)
 			sa(&a, true);
-		else if (stack_len(a) == 3)
+		else if (len == 3)
 			sort_three(&a);
+		else if (len <= 100)
+			sort_chunks(&a, &b);
+		else if (len <= 500)
+			sort_radix(&a, &b);
 		else
 			sort_stacks(&a, &b);
 	}

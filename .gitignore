@@ -1,0 +1,22 @@
+# Build artifacts
+obj/
+push_swap
+libft/*.o
+libft/*.a
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Python scripts cache
+__pycache__/
+*.pyc
+
+# Logs
+*.log
+
+# Other
+.sass-cache/
+node_modules/
+

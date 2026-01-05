@@ -6,7 +6,7 @@
 /*   By: alsagir <alsagir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 21:37:29 by alsagir           #+#    #+#             */
-/*   Updated: 2026/01/02 21:44:04 by alsagir          ###   ########.fr       */
+/*   Updated: 2026/01/04 23:40:27 by alsagir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,15 +51,17 @@ long	ft_atol(const char *s)
 
 int	error_syntax(char *str_n)
 {
-	if (!(*str_n == '+' || *str_n == '-' || (*str_n >= '0' && *str_n <= '9')))
+	if (!str_n || !*str_n)
 		return (1);
-	if ((*str_n == '+' || *str_n == '-')
-		&& !(str_n[1] >= '0' && str_n[1] <= '9'))
+	if (*str_n == '+' || *str_n == '-')
+		str_n++;
+	if (!*str_n)
 		return (1);
-	while (*++str_n)
+	while (*str_n)
 	{
 		if (!(*str_n >= '0' && *str_n <= '9'))
 			return (1);
+		str_n++;
 	}
 	return (0);
 }
@@ -84,9 +86,11 @@ void	set_cheapest(t_stack_node *stack)
 
 	if (!stack)
 		return ;
+	cheapest_node = stack;
 	cheapest_value = LONG_MAX;
 	while (stack)
 	{
+		stack->cheapest = false;
 		if (stack->push_cost < cheapest_value)
 		{
 			cheapest_value = stack->push_cost;
